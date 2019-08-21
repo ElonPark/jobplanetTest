@@ -1,0 +1,54 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'jobplanetTest' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # 라이브러리 경고 제거
+  inhibit_all_warnings!
+
+
+  # Architecture
+  pod 'ReactorKit'
+
+
+  # UI
+  pod 'SnapKit'
+  pod 'ReusableKit'
+  pod 'ReusableKit/RxSwift'
+  pod 'NVActivityIndicatorView'
+
+
+  # Networking
+  # RxSwift5을 위해 프리 릴리즈 버전 사용
+  pod 'Moya/RxSwift', '14.0.0-alpha.1'
+  # RxSwift5 공식 지원되면 릴리즈 버전으로 변경
+  pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/814349837/Moya-ObjectMapper', :commit => '6347b7bde5'
+  
+  # Rx
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod 'RxOptional'
+  pod 'RxDataSources', '~> 4.0'
+  pod 'RxViewController'
+
+  # ETC
+  pod 'Then'
+  pod 'ObjectMapper', '~> 3.4'
+
+  # Pods for jobplanetTest
+
+  target 'jobplanetTestTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
+  end
+
+  target 'jobplanetTestUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

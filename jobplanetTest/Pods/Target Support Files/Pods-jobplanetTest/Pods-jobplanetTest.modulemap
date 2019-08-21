@@ -1,0 +1,6 @@
+framework module Pods_jobplanetTest {
+  umbrella header "Pods-jobplanetTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

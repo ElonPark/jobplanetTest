@@ -1,0 +1,128 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Differentiator (4.0.1)
+  - Moya (14.0.0-alpha.1):
+    - Moya/Core (= 14.0.0-alpha.1)
+  - Moya-ObjectMapper/Core (2.9):
+    - Moya (~> 14.0.0-alpha.1)
+    - ObjectMapper (~> 3.5.1)
+  - Moya-ObjectMapper/RxSwift (2.9):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (~> 5)
+  - Moya/Core (14.0.0-alpha.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/RxSwift (14.0.0-alpha.1):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - ObjectMapper (3.5.1)
+  - ReactorKit (2.0.1):
+    - RxSwift (~> 5.0)
+  - Result (4.1.0)
+  - ReusableKit (3.0.0):
+    - ReusableKit/Core (= 3.0.0)
+  - ReusableKit/Core (3.0.0)
+  - ReusableKit/RxSwift (3.0.0):
+    - ReusableKit/Core
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.0.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SnapKit (5.0.1)
+  - Then (2.5.0)
+
+DEPENDENCIES:
+  - Moya-ObjectMapper/RxSwift (from `https://github.com/814349837/Moya-ObjectMapper`, commit `6347b7bde5`)
+  - Moya/RxSwift (= 14.0.0-alpha.1)
+  - NVActivityIndicatorView
+  - ObjectMapper (~> 3.4)
+  - ReactorKit
+  - ReusableKit
+  - ReusableKit/RxSwift
+  - RxBlocking (~> 5)
+  - RxCocoa (~> 5)
+  - RxDataSources (~> 4.0)
+  - RxOptional
+  - RxSwift (~> 5)
+  - RxTest (~> 5)
+  - RxViewController
+  - SnapKit
+  - Then
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Differentiator
+    - Moya
+    - NVActivityIndicatorView
+    - ObjectMapper
+    - ReactorKit
+    - Result
+    - ReusableKit
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - RxTest
+    - RxViewController
+    - SnapKit
+    - Then
+
+EXTERNAL SOURCES:
+  Moya-ObjectMapper:
+    :commit: 6347b7bde5
+    :git: https://github.com/814349837/Moya-ObjectMapper
+
+CHECKOUT OPTIONS:
+  Moya-ObjectMapper:
+    :commit: 6347b7bde5
+    :git: https://github.com/814349837/Moya-ObjectMapper
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  Moya: 65485239114b3b327a17dc2e839f6c8b7143aae9
+  Moya-ObjectMapper: 24595b5e913e278ce3e7ac2afa1993fea5938353
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Then: 0157115e883545c77967b452fe74a1d25fb796e1
+
+PODFILE CHECKSUM: 1d3b6bd2fd872338909821287ee7e4dbbff70428
+
+COCOAPODS: 1.7.5
