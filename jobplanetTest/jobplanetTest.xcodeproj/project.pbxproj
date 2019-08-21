@@ -11,13 +11,27 @@
 		70F79FA1D963DFB31D3F5366 /* Pods_jobplanetTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181566FBFB38794C01A21144 /* Pods_jobplanetTestTests.framework */; };
 		B134A4A2C40207245F80CAC1 /* Pods_jobplanetTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0489ADD3F0FDCE0BA80AA23 /* Pods_jobplanetTestUITests.framework */; };
 		DB9275FA230D0DA9001FF7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */; };
-		DB9275FC230D0DA9001FF7FE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9275FB230D0DA9001FF7FE /* MainViewController.swift */; };
-		DB9275FF230D0DA9001FF7FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9275FD230D0DA9001FF7FE /* Main.storyboard */; };
 		DB927601230D0DAB001FF7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB927600230D0DAB001FF7FE /* Assets.xcassets */; };
 		DB927604230D0DAB001FF7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB927602230D0DAB001FF7FE /* LaunchScreen.storyboard */; };
 		DB92760F230D0DAB001FF7FE /* jobplanetTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92760E230D0DAB001FF7FE /* jobplanetTestTests.swift */; };
 		DB92761A230D0DAB001FF7FE /* jobplanetTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB927619230D0DAB001FF7FE /* jobplanetTestUITests.swift */; };
 		DB927629230D2FA0001FF7FE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB927628230D2FA0001FF7FE /* Logger.swift */; };
+		DB9F8F1D230D797700E724B6 /* JobplanetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F1C230D797700E724B6 /* JobplanetAPI.swift */; };
+		DB9F8F1F230D7A5200E724B6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F1E230D7A5200E724B6 /* Networking.swift */; };
+		DB9F8F22230D7ED200E724B6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F21230D7ED200E724B6 /* NetworkService.swift */; };
+		DB9F8F2D230D803600E724B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9F8F2A230D803600E724B6 /* Main.storyboard */; };
+		DB9F8F2E230D803600E724B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F2B230D803600E724B6 /* MainViewController.swift */; };
+		DB9F8F2F230D803600E724B6 /* MainViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F2C230D803600E724B6 /* MainViewReactor.swift */; };
+		DB9F8F32230D88B700E724B6 /* Jobplanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F31230D88B700E724B6 /* Jobplanet.swift */; };
+		DB9F8F35230D93DF00E724B6 /* CellTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F34230D93DF00E724B6 /* CellTypeModel.swift */; };
+		DB9F8F38230D941A00E724B6 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F37230D941A00E724B6 /* CellType.swift */; };
+		DB9F8F3B230D944600E724B6 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F3A230D944600E724B6 /* Company.swift */; };
+		DB9F8F3D230D947A00E724B6 /* HorizontalTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F3C230D947A00E724B6 /* HorizontalTheme.swift */; };
+		DB9F8F3F230D949100E724B6 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F3E230D949100E724B6 /* Interview.swift */; };
+		DB9F8F41230D94A700E724B6 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F40230D94A700E724B6 /* JobPosting.swift */; };
+		DB9F8F43230D94CF00E724B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F42230D94CF00E724B6 /* Review.swift */; };
+		DB9F8F45230D94E600E724B6 /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F44230D94E600E724B6 /* Salary.swift */; };
+		DB9F8F47230D950B00E724B6 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F46230D950B00E724B6 /* CellItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +62,6 @@
 		B9A971718076E07450ABF86D /* Pods-jobplanetTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jobplanetTestTests.debug.xcconfig"; path = "Target Support Files/Pods-jobplanetTestTests/Pods-jobplanetTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9275F6230D0DA9001FF7FE /* jobplanetTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jobplanetTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB9275FB230D0DA9001FF7FE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DB9275FE230D0DA9001FF7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB927600230D0DAB001FF7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB927603230D0DAB001FF7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB927605230D0DAB001FF7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +72,22 @@
 		DB927619230D0DAB001FF7FE /* jobplanetTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobplanetTestUITests.swift; sourceTree = "<group>"; };
 		DB92761B230D0DAB001FF7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB927628230D2FA0001FF7FE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		DB9F8F1C230D797700E724B6 /* JobplanetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobplanetAPI.swift; sourceTree = "<group>"; };
+		DB9F8F1E230D7A5200E724B6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		DB9F8F21230D7ED200E724B6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DB9F8F2A230D803600E724B6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ViewControllers/Main.storyboard; sourceTree = "<group>"; };
+		DB9F8F2B230D803600E724B6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DB9F8F2C230D803600E724B6 /* MainViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewReactor.swift; sourceTree = "<group>"; };
+		DB9F8F31230D88B700E724B6 /* Jobplanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobplanet.swift; sourceTree = "<group>"; };
+		DB9F8F34230D93DF00E724B6 /* CellTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeModel.swift; sourceTree = "<group>"; };
+		DB9F8F37230D941A00E724B6 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		DB9F8F3A230D944600E724B6 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		DB9F8F3C230D947A00E724B6 /* HorizontalTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTheme.swift; sourceTree = "<group>"; };
+		DB9F8F3E230D949100E724B6 /* Interview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
+		DB9F8F40230D94A700E724B6 /* JobPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPosting.swift; sourceTree = "<group>"; };
+		DB9F8F42230D94CF00E724B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		DB9F8F44230D94E600E724B6 /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
+		DB9F8F46230D950B00E724B6 /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
 		E0EDD30AEB9A2D6B44227324 /* Pods-jobplanetTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jobplanetTestTests.release.xcconfig"; path = "Target Support Files/Pods-jobplanetTestTests/Pods-jobplanetTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,9 +168,12 @@
 			isa = PBXGroup;
 			children = (
 				DB927627230D2F93001FF7FE /* Logger */,
+				DB9F8F1B230D794000E724B6 /* Networking */,
+				DB9F8F20230D7EBB00E724B6 /* Service */,
+				DB9F8F30230D887A00E724B6 /* Models */,
+				DB9F8F23230D7FBF00E724B6 /* ViewControllers */,
+				DB9F8F2A230D803600E724B6 /* Main.storyboard */,
 				DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */,
-				DB9275FB230D0DA9001FF7FE /* MainViewController.swift */,
-				DB9275FD230D0DA9001FF7FE /* Main.storyboard */,
 				DB927600230D0DAB001FF7FE /* Assets.xcassets */,
 				DB927602230D0DAB001FF7FE /* LaunchScreen.storyboard */,
 				DB927605230D0DAB001FF7FE /* Info.plist */,
@@ -174,6 +205,73 @@
 				DB927628230D2FA0001FF7FE /* Logger.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		DB9F8F1B230D794000E724B6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F1C230D797700E724B6 /* JobplanetAPI.swift */,
+				DB9F8F1E230D7A5200E724B6 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DB9F8F20230D7EBB00E724B6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F21230D7ED200E724B6 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DB9F8F23230D7FBF00E724B6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F2B230D803600E724B6 /* MainViewController.swift */,
+				DB9F8F2C230D803600E724B6 /* MainViewReactor.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DB9F8F30230D887A00E724B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F36230D940700E724B6 /* Enum */,
+				DB9F8F33230D93C800E724B6 /* Protocols */,
+				DB9F8F39230D942D00E724B6 /* CellModel */,
+				DB9F8F31230D88B700E724B6 /* Jobplanet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB9F8F33230D93C800E724B6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F34230D93DF00E724B6 /* CellTypeModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DB9F8F36230D940700E724B6 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F37230D941A00E724B6 /* CellType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		DB9F8F39230D942D00E724B6 /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F8F46230D950B00E724B6 /* CellItem.swift */,
+				DB9F8F3A230D944600E724B6 /* Company.swift */,
+				DB9F8F3C230D947A00E724B6 /* HorizontalTheme.swift */,
+				DB9F8F3E230D949100E724B6 /* Interview.swift */,
+				DB9F8F40230D94A700E724B6 /* JobPosting.swift */,
+				DB9F8F42230D94CF00E724B6 /* Review.swift */,
+				DB9F8F44230D94E600E724B6 /* Salary.swift */,
+			);
+			path = CellModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +385,7 @@
 			files = (
 				DB927604230D0DAB001FF7FE /* LaunchScreen.storyboard in Resources */,
 				DB927601230D0DAB001FF7FE /* Assets.xcassets in Resources */,
-				DB9275FF230D0DA9001FF7FE /* Main.storyboard in Resources */,
+				DB9F8F2D230D803600E724B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +513,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9275FC230D0DA9001FF7FE /* MainViewController.swift in Sources */,
+				DB9F8F47230D950B00E724B6 /* CellItem.swift in Sources */,
+				DB9F8F2F230D803600E724B6 /* MainViewReactor.swift in Sources */,
+				DB9F8F3D230D947A00E724B6 /* HorizontalTheme.swift in Sources */,
+				DB9F8F38230D941A00E724B6 /* CellType.swift in Sources */,
+				DB9F8F45230D94E600E724B6 /* Salary.swift in Sources */,
+				DB9F8F3F230D949100E724B6 /* Interview.swift in Sources */,
+				DB9F8F32230D88B700E724B6 /* Jobplanet.swift in Sources */,
+				DB9F8F43230D94CF00E724B6 /* Review.swift in Sources */,
+				DB9F8F1F230D7A5200E724B6 /* Networking.swift in Sources */,
 				DB927629230D2FA0001FF7FE /* Logger.swift in Sources */,
+				DB9F8F1D230D797700E724B6 /* JobplanetAPI.swift in Sources */,
+				DB9F8F2E230D803600E724B6 /* MainViewController.swift in Sources */,
+				DB9F8F3B230D944600E724B6 /* Company.swift in Sources */,
+				DB9F8F41230D94A700E724B6 /* JobPosting.swift in Sources */,
+				DB9F8F35230D93DF00E724B6 /* CellTypeModel.swift in Sources */,
+				DB9F8F22230D7ED200E724B6 /* NetworkService.swift in Sources */,
 				DB9275FA230D0DA9001FF7FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,14 +565,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DB9275FD230D0DA9001FF7FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB9275FE230D0DA9001FF7FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DB927602230D0DAB001FF7FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
