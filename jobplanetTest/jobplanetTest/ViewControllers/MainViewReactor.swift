@@ -18,29 +18,36 @@ class MainViewReactor: Reactor {
     
     enum Mutation {
         case setLoading(Bool)
+        case setJobplanet(Jobplanet)
     }
     
     struct State {
         var isLoading: Bool = false
+        var jobplanet: Jobplanet? = nil
     }
     
     let networkService: NetworkService
-    let initialState: State = State()
+    let initialState: State
     
     init(networkService: NetworkService) {
         self.networkService = networkService
+        self.initialState = State()
         
         _ = self.state
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
-         switch action {
-         case .loadData:
+        switch action {
+        case .loadData:
             let startLoading: Observable<Mutation> = .just(.setLoading(true))
             let endLoading: Observable<Mutation> = .just(.setLoading(false))
             
-            return .concat([startLoading, endLoading])
-         }
+            let setJobplanet = networkService.sample()
+                .asObservable()
+                .map(Mutation.setJobplanet)
+            
+            return .concat([startLoading, setJobplanet, endLoading])
+        }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
@@ -49,6 +56,10 @@ class MainViewReactor: Reactor {
         switch mutation {
         case .setLoading(let isLoading):
             newState.isLoading = isLoading
+            return newState
+            
+        case .setJobplanet(let model):
+            newState.jobplanet = model
             return newState
         }
     }

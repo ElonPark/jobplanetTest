@@ -14,19 +14,18 @@ import NVActivityIndicatorView
 
 final class MainViewController: UIViewController, StoryboardView {
     
-    private let reactor = MainViewReactor(networkService: NetworkService(networking: Networking<JobplanetAPI>()))
     var disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     func bind(reactor: MainViewReactor) {
-        
+
         // Input
-        
-        self.rx.viewDidLoad
-            .map { Reactor.Action.loadData }
+       
+        Observable.just(Reactor.Action.loadData)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
