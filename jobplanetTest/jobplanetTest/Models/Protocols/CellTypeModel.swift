@@ -6,8 +6,8 @@
 //  Copyright © 2019 elon. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-protocol CellTypeModel {
+protocol CellTypeModel: Equatable {
     var cellType: CellType { get }
 }

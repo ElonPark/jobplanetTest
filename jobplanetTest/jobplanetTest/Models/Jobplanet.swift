@@ -14,7 +14,7 @@ struct Jobplanet: ImmutableMappable {
     let minimumReviews: Int
     let minimumSalaries: Int
     
-    let items: [CellTypeModel]
+    let items: [CellItem]
     
     let page: Int
     let pageSize: Int
@@ -26,7 +26,7 @@ struct Jobplanet: ImmutableMappable {
         minimumInterviews = try map.value("minimum_interviews")
         minimumReviews = try map.value("minimum_reviews")
         minimumSalaries = try map.value("minimum_salaries")
-        
+
         items = try map.value("items")
         
         page = try map.value("page")
