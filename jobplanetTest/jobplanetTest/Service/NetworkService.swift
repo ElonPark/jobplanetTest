@@ -13,9 +13,8 @@ import Moya_ObjectMapper
 
 
 protocol NetworkServiceType {
-//    func sample() -> Single<>
+    func sample() -> Single<Jobplanet>
 }
-
 
 struct NetworkService: NetworkServiceType {
     private let networking: Networking<JobplanetAPI>
@@ -24,16 +23,11 @@ struct NetworkService: NetworkServiceType {
         self.networking = networking
     }
     
-//    func sample() -> Single<ViolationKindergartens> {
-//        // FIXME: Test Stub
-//        return Single.just(ViolationKindergartenAPI.all.sampleData)
-//            .map { data in
-//                return try JSONSerialization.jsonObject(
-//                    with: data,
-//                    options: .allowFragments
-//                )
-//            }
-//            .map { try Mapper<ViolationKindergarten>().mapArray(JSONObject: $0) }
-//
-//    }
+    func sample() -> Single<Jobplanet> {
+        return networking.request(.sample)
+            .mapObject(Jobplanet.self)
+            .do(onError: { error in
+                Log.error(error)
+            })
+    }
 }

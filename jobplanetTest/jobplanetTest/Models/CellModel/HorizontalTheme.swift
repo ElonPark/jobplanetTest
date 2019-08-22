@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct HorizontalTheme: ImmutableMappable, CellTypeModel {
+struct HorizontalTheme: ImmutableMappable, CellTypeModel, Equatable {
     let cellType: CellType
     let count: Int
     let themes: [Theme]

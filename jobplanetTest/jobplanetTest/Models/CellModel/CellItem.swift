@@ -37,30 +37,3 @@ struct CellItem: ImmutableMappable {
         }
     }
 }
-//
-//extension CellItem {
-//    static func == (lhs: CellItem, rhs: CellItem) -> Bool {
-//        guard lhs.cellType == rhs.cellType else { return false }
-//        switch lhs.cellType {
-//        case .company:
-//            return (lhs.data as! Company) == (rhs.data as! Company)
-//
-//        case .horizontalTheme:
-//            return (lhs.data as! HorizontalTheme) == (rhs.data as! HorizontalTheme)
-//
-//        case .interview:
-//            return (lhs.data as! Interview) == (rhs.data as! Interview)
-//
-//        case .jobPosting:
-//            return (lhs.data as! JobPosting) == (rhs.data as! JobPosting)
-//
-//        case .review:
-//            return (lhs.data as! Review) == (rhs.data as! Review)
-//
-//        case .salary:
-//            return (lhs.data as! Salary) == (rhs.data as! Salary)
-//
-//        }
-//    }
-//
-//}

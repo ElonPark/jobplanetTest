@@ -33,6 +33,7 @@
 		DB9F8F43230D94CF00E724B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F42230D94CF00E724B6 /* Review.swift */; };
 		DB9F8F45230D94E600E724B6 /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F44230D94E600E724B6 /* Salary.swift */; };
 		DB9F8F47230D950B00E724B6 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F46230D950B00E724B6 /* CellItem.swift */; };
+		DB9F8F49230ED49700E724B6 /* Deadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F48230ED49700E724B6 /* Deadline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		DB9F8F42230D94CF00E724B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		DB9F8F44230D94E600E724B6 /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
 		DB9F8F46230D950B00E724B6 /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
+		DB9F8F48230ED49700E724B6 /* Deadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deadline.swift; sourceTree = "<group>"; };
 		E0EDD30AEB9A2D6B44227324 /* Pods-jobplanetTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jobplanetTestTests.release.xcconfig"; path = "Target Support Files/Pods-jobplanetTestTests/Pods-jobplanetTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +273,7 @@
 				DB0F83CA230E7C7E00032394 /* Theme.swift */,
 				DB9F8F3E230D949100E724B6 /* Interview.swift */,
 				DB9F8F40230D94A700E724B6 /* JobPosting.swift */,
+				DB9F8F48230ED49700E724B6 /* Deadline.swift */,
 				DB9F8F42230D94CF00E724B6 /* Review.swift */,
 				DB9F8F44230D94E600E724B6 /* Salary.swift */,
 			);
@@ -517,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9F8F47230D950B00E724B6 /* CellItem.swift in Sources */,
+				DB9F8F49230ED49700E724B6 /* Deadline.swift in Sources */,
 				DB9F8F2F230D803600E724B6 /* MainViewReactor.swift in Sources */,
 				DB9F8F3D230D947A00E724B6 /* HorizontalTheme.swift in Sources */,
 				DB9F8F38230D941A00E724B6 /* CellType.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct Company: ImmutableMappable, CellTypeModel {
+struct Company: ImmutableMappable, CellTypeModel, Equatable {
     let cellType: CellType
     let ranking: Int
     let companyID: Int
@@ -22,8 +22,8 @@ struct Company: ImmutableMappable, CellTypeModel {
     let reviewSummary: String
     let rateTotalAvg: Double
     let salaryAvg: Int
-    let industryName: String
     let industryID: Int
+    let industryName: String
     let type: String
     
     init(map: Map) throws {
@@ -40,8 +40,8 @@ struct Company: ImmutableMappable, CellTypeModel {
         reviewSummary = try map.value("review_summary")
         rateTotalAvg = try map.value("rate_total_avg")
         salaryAvg = try map.value("salary_avg")
-        industryName = try map.value("industry_name")
         industryID = try map.value("industry_id")
+        industryName = try map.value("industry_name")
         type = try map.value("type")
     }
 }

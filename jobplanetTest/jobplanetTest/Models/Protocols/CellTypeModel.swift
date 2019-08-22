@@ -8,6 +8,6 @@
 
 import ObjectMapper
 
-protocol CellTypeModel: Equatable {
+protocol CellTypeModel {
     var cellType: CellType { get }
 }
