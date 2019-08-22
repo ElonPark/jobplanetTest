@@ -32,8 +32,6 @@ class MainViewReactor: Reactor {
     init(networkService: NetworkService) {
         self.networkService = networkService
         self.initialState = State()
-        
-        _ = self.state
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
