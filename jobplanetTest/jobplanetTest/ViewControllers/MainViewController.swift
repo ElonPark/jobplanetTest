@@ -33,6 +33,7 @@ final class MainViewController: UIViewController, StoryboardView {
         
         reactor.state
             .map { $0.isLoading }
+            .distinctUntilChanged()
             .bind { [weak self] isLoading in
                 self?.setLoadingIndicator(isLoading)
             }
