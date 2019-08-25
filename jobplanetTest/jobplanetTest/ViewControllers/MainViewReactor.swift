@@ -14,16 +14,19 @@ class MainViewReactor: Reactor {
     
     enum Action {
         case loadData
+        case itemSelected(IndexPath)
     }
     
     enum Mutation {
         case setLoading(Bool)
-        case setJobplanet(Jobplanet)
+        case setJobplanet([MainViewSectionItem])
+        case setSelectedItem(Int)
     }
     
     struct State {
         var isLoading: Bool = false
-        var jobplanet: Jobplanet? = nil
+        var sections = [MainViewSection]()
+        var selectedItem: MainViewSectionItem? = nil
     }
     
     let networkService: NetworkService
@@ -42,9 +45,14 @@ class MainViewReactor: Reactor {
             
             let setJobplanet = networkService.sample()
                 .asObservable()
+                .map(mainViewSectionItems)
                 .map(Mutation.setJobplanet)
             
             return .concat([startLoading, setJobplanet, endLoading])
+            
+        case .itemSelected(let indexPath):
+            Log.debug(indexPath.row)
+            return .just(.setSelectedItem(indexPath.row))
         }
     }
     
@@ -53,13 +61,54 @@ class MainViewReactor: Reactor {
         
         switch mutation {
         case .setLoading(let isLoading):
+            newState.selectedItem = nil
             newState.isLoading = isLoading
             return newState
             
-        case .setJobplanet(let model):
-            newState.jobplanet = model
+        case .setJobplanet(let sectionItems):
+            newState.selectedItem = nil
+            newState.sections = [.jobplanet(sectionItems)]
+            return newState
+            
+        case .setSelectedItem(let row):
+            newState.selectedItem = newState.sections.first?.items[row]
             return newState
         }
     }
     
+    private func mainViewSectionItems(with jobplanet: Jobplanet) -> [MainViewSectionItem] {
+        return jobplanet.items.compactMap { item -> MainViewSectionItem? in
+            switch item.cellType {
+            case .company:
+                guard let company = item.data as? Company else { return nil }
+                let reactor = SectionItemReactor(model: company)
+                return .company(reactor)
+                
+            case .horizontalTheme:
+                guard let horizontalTheme = item.data as? HorizontalTheme else { return nil }
+                let reactor = SectionItemReactor(model: horizontalTheme)
+                return .horizontalTheme(reactor)
+                
+            case .interview:
+                guard let interview = item.data as? Interview else { return nil }
+                let reactor = SectionItemReactor(model: interview)
+                return .interview(reactor)
+                
+            case .jobPosting:
+                guard let jobPosting = item.data as? JobPosting else { return nil }
+                let reactor = SectionItemReactor(model: jobPosting)
+                return .jobPosting(reactor)
+                
+            case .review:
+                guard let review = item.data as? Review else { return nil }
+                let reactor = SectionItemReactor(model: review)
+                return .review(reactor)
+                
+            case .salary:
+                guard let salary = item.data as? Salary else { return nil }
+                let reactor = SectionItemReactor(model: salary)
+                return .salary(reactor)
+            }
+        }
+    }
 }

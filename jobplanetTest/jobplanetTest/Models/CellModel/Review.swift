@@ -23,7 +23,7 @@ struct Review: ImmutableMappable, CellTypeModel, Equatable {
     let rateTotalAvg: Double
     let date: Date?
     let industryID: Int
-    let industry_name: String
+    let industryName: String
     let type: String
     
     private let yyyyMMdd = DateFormatter().then {
@@ -50,7 +50,7 @@ struct Review: ImmutableMappable, CellTypeModel, Equatable {
         let transform = DateFormatterTransform(dateFormatter: yyyyMMdd)
         date = try? map.value("date", using: transform)
         industryID = try map.value("industry_id")
-        industry_name = try map.value("industry_name")
+        industryName = try map.value("industry_name")
         type = try map.value("type")
     }
 }

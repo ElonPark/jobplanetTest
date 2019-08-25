@@ -10,6 +10,28 @@
 		5DC3BCA8145DFBDF5E50F4CC /* Pods_jobplanetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFCA1F1A79B3170257DF24 /* Pods_jobplanetTest.framework */; };
 		70F79FA1D963DFB31D3F5366 /* Pods_jobplanetTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181566FBFB38794C01A21144 /* Pods_jobplanetTestTests.framework */; };
 		B134A4A2C40207245F80CAC1 /* Pods_jobplanetTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0489ADD3F0FDCE0BA80AA23 /* Pods_jobplanetTestUITests.framework */; };
+		DB03D6F72311815900BC6493 /* MainViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D6F62311815900BC6493 /* MainViewSection.swift */; };
+		DB03D6F92311915900BC6493 /* SectionItemReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D6F82311915900BC6493 /* SectionItemReactor.swift */; };
+		DB03D6FB2311B53B00BC6493 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D6FA2311B53A00BC6493 /* NibLoadableView.swift */; };
+		DB03D706231285EB00BC6493 /* HorizontalThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D704231285EB00BC6493 /* HorizontalThemeCell.swift */; };
+		DB03D707231285EB00BC6493 /* HorizontalThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D705231285EB00BC6493 /* HorizontalThemeCell.xib */; };
+		DB03D70A2312860800BC6493 /* InterviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D7082312860800BC6493 /* InterviewCell.swift */; };
+		DB03D70B2312860800BC6493 /* InterviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D7092312860800BC6493 /* InterviewCell.xib */; };
+		DB03D70E2312861D00BC6493 /* JobPostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D70C2312861D00BC6493 /* JobPostingCell.swift */; };
+		DB03D70F2312861D00BC6493 /* JobPostingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D70D2312861D00BC6493 /* JobPostingCell.xib */; };
+		DB03D7122312863200BC6493 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D7102312863200BC6493 /* ReviewCell.swift */; };
+		DB03D7132312863200BC6493 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D7112312863200BC6493 /* ReviewCell.xib */; };
+		DB03D7162312864C00BC6493 /* SalaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D7142312864C00BC6493 /* SalaryCell.swift */; };
+		DB03D7172312864C00BC6493 /* SalaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D7152312864C00BC6493 /* SalaryCell.xib */; };
+		DB03D71B231286E600BC6493 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D719231286E600BC6493 /* ThemeCollectionViewCell.swift */; };
+		DB03D71C231286E600BC6493 /* ThemeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D71A231286E600BC6493 /* ThemeCollectionViewCell.xib */; };
+		DB03D71F23128B5C00BC6493 /* CompanyInfoTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D71E23128B5C00BC6493 /* CompanyInfoTitleView.swift */; };
+		DB03D72123128B6C00BC6493 /* CompanyInfoTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB03D72023128B6C00BC6493 /* CompanyInfoTitleView.xib */; };
+		DB03D7232312AC5D00BC6493 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D7222312AC5D00BC6493 /* UIColorExtension.swift */; };
+		DB03D7252312B85500BC6493 /* HasShowMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D7242312B85500BC6493 /* HasShowMoreButton.swift */; };
+		DB03D72C2312EF5100BC6493 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D7292312EF5100BC6493 /* DetailViewController.swift */; };
+		DB03D72D2312EF5100BC6493 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D72A2312EF5100BC6493 /* DetailViewReactor.swift */; };
+		DB03D72F2312F09800BC6493 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D72E2312F09800BC6493 /* UIViewControllerExtension.swift */; };
 		DB0F83CB230E7C7E00032394 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0F83CA230E7C7E00032394 /* Theme.swift */; };
 		DB9275FA230D0DA9001FF7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */; };
 		DB927601230D0DAB001FF7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB927600230D0DAB001FF7FE /* Assets.xcassets */; };
@@ -17,6 +39,12 @@
 		DB92760F230D0DAB001FF7FE /* jobplanetTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92760E230D0DAB001FF7FE /* jobplanetTestTests.swift */; };
 		DB92761A230D0DAB001FF7FE /* jobplanetTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB927619230D0DAB001FF7FE /* jobplanetTestUITests.swift */; };
 		DB927629230D2FA0001FF7FE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB927628230D2FA0001FF7FE /* Logger.swift */; };
+		DB94221B23103D95007CA8F9 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94221923103D95007CA8F9 /* CompanyCell.swift */; };
+		DB94221C23103D95007CA8F9 /* CompanyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB94221A23103D95007CA8F9 /* CompanyCell.xib */; };
+		DB942222231172AE007CA8F9 /* DisposableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB942221231172AE007CA8F9 /* DisposableExtension.swift */; };
+		DB94222723117343007CA8F9 /* UseCompositeDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94222623117343007CA8F9 /* UseCompositeDisposable.swift */; };
+		DB94222923117A2F007CA8F9 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94222823117A2F007CA8F9 /* IntExtension.swift */; };
+		DB94222B23117AF9007CA8F9 /* StringAttributeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94222A23117AF9007CA8F9 /* StringAttributeExtension.swift */; };
 		DB9F8F1D230D797700E724B6 /* JobplanetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F1C230D797700E724B6 /* JobplanetAPI.swift */; };
 		DB9F8F1F230D7A5200E724B6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F1E230D7A5200E724B6 /* Networking.swift */; };
 		DB9F8F22230D7ED200E724B6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F8F21230D7ED200E724B6 /* NetworkService.swift */; };
@@ -62,6 +90,28 @@
 		9BE9B9D99DF40778921E9092 /* Pods-jobplanetTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jobplanetTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-jobplanetTestUITests/Pods-jobplanetTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0489ADD3F0FDCE0BA80AA23 /* Pods_jobplanetTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jobplanetTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A971718076E07450ABF86D /* Pods-jobplanetTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jobplanetTestTests.debug.xcconfig"; path = "Target Support Files/Pods-jobplanetTestTests/Pods-jobplanetTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB03D6F62311815900BC6493 /* MainViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewSection.swift; sourceTree = "<group>"; };
+		DB03D6F82311915900BC6493 /* SectionItemReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItemReactor.swift; sourceTree = "<group>"; };
+		DB03D6FA2311B53A00BC6493 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		DB03D704231285EB00BC6493 /* HorizontalThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalThemeCell.swift; sourceTree = "<group>"; };
+		DB03D705231285EB00BC6493 /* HorizontalThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalThemeCell.xib; sourceTree = "<group>"; };
+		DB03D7082312860800BC6493 /* InterviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewCell.swift; sourceTree = "<group>"; };
+		DB03D7092312860800BC6493 /* InterviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewCell.xib; sourceTree = "<group>"; };
+		DB03D70C2312861D00BC6493 /* JobPostingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostingCell.swift; sourceTree = "<group>"; };
+		DB03D70D2312861D00BC6493 /* JobPostingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobPostingCell.xib; sourceTree = "<group>"; };
+		DB03D7102312863200BC6493 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		DB03D7112312863200BC6493 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		DB03D7142312864C00BC6493 /* SalaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryCell.swift; sourceTree = "<group>"; };
+		DB03D7152312864C00BC6493 /* SalaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryCell.xib; sourceTree = "<group>"; };
+		DB03D719231286E600BC6493 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DB03D71A231286E600BC6493 /* ThemeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionViewCell.xib; sourceTree = "<group>"; };
+		DB03D71E23128B5C00BC6493 /* CompanyInfoTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoTitleView.swift; sourceTree = "<group>"; };
+		DB03D72023128B6C00BC6493 /* CompanyInfoTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyInfoTitleView.xib; sourceTree = "<group>"; };
+		DB03D7222312AC5D00BC6493 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DB03D7242312B85500BC6493 /* HasShowMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasShowMoreButton.swift; sourceTree = "<group>"; };
+		DB03D7292312EF5100BC6493 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DB03D72A2312EF5100BC6493 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
+		DB03D72E2312F09800BC6493 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DB0F83CA230E7C7E00032394 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DB9275F6230D0DA9001FF7FE /* jobplanetTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jobplanetTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +125,12 @@
 		DB927619230D0DAB001FF7FE /* jobplanetTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobplanetTestUITests.swift; sourceTree = "<group>"; };
 		DB92761B230D0DAB001FF7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB927628230D2FA0001FF7FE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		DB94221923103D95007CA8F9 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		DB94221A23103D95007CA8F9 /* CompanyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyCell.xib; sourceTree = "<group>"; };
+		DB942221231172AE007CA8F9 /* DisposableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableExtension.swift; sourceTree = "<group>"; };
+		DB94222623117343007CA8F9 /* UseCompositeDisposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCompositeDisposable.swift; sourceTree = "<group>"; };
+		DB94222823117A2F007CA8F9 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		DB94222A23117AF9007CA8F9 /* StringAttributeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAttributeExtension.swift; sourceTree = "<group>"; };
 		DB9F8F1C230D797700E724B6 /* JobplanetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobplanetAPI.swift; sourceTree = "<group>"; };
 		DB9F8F1E230D7A5200E724B6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DB9F8F21230D7ED200E724B6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -146,6 +202,86 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB03D6F52311813300BC6493 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D6F62311815900BC6493 /* MainViewSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		DB03D6FC2311C23C00BC6493 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D7242312B85500BC6493 /* HasShowMoreButton.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DB03D6FF2312854D00BC6493 /* HorizontalThemeCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D718231286C100BC6493 /* ThemeCollectionViewCell */,
+				DB03D704231285EB00BC6493 /* HorizontalThemeCell.swift */,
+				DB03D705231285EB00BC6493 /* HorizontalThemeCell.xib */,
+			);
+			path = HorizontalThemeCell;
+			sourceTree = "<group>";
+		};
+		DB03D7002312855C00BC6493 /* InterviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D7082312860800BC6493 /* InterviewCell.swift */,
+				DB03D7092312860800BC6493 /* InterviewCell.xib */,
+			);
+			path = InterviewCell;
+			sourceTree = "<group>";
+		};
+		DB03D7012312856900BC6493 /* JobPostingCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D70C2312861D00BC6493 /* JobPostingCell.swift */,
+				DB03D70D2312861D00BC6493 /* JobPostingCell.xib */,
+			);
+			path = JobPostingCell;
+			sourceTree = "<group>";
+		};
+		DB03D7022312857300BC6493 /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D7102312863200BC6493 /* ReviewCell.swift */,
+				DB03D7112312863200BC6493 /* ReviewCell.xib */,
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
+		DB03D7032312858700BC6493 /* SalaryCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D7142312864C00BC6493 /* SalaryCell.swift */,
+				DB03D7152312864C00BC6493 /* SalaryCell.xib */,
+			);
+			path = SalaryCell;
+			sourceTree = "<group>";
+		};
+		DB03D718231286C100BC6493 /* ThemeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D719231286E600BC6493 /* ThemeCollectionViewCell.swift */,
+				DB03D71A231286E600BC6493 /* ThemeCollectionViewCell.xib */,
+			);
+			path = ThemeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DB03D71D23128B2700BC6493 /* CompanyInfoTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D71E23128B5C00BC6493 /* CompanyInfoTitleView.swift */,
+				DB03D72023128B6C00BC6493 /* CompanyInfoTitleView.xib */,
+			);
+			path = CompanyInfoTitleView;
+			sourceTree = "<group>";
+		};
 		DB9275ED230D0DA9001FF7FE = {
 			isa = PBXGroup;
 			children = (
@@ -172,9 +308,13 @@
 			isa = PBXGroup;
 			children = (
 				DB927627230D2F93001FF7FE /* Logger */,
+				DB94222023117118007CA8F9 /* Extensions */,
+				DB942223231172ED007CA8F9 /* Common */,
 				DB9F8F1B230D794000E724B6 /* Networking */,
 				DB9F8F20230D7EBB00E724B6 /* Service */,
 				DB9F8F30230D887A00E724B6 /* Models */,
+				DB03D6F52311813300BC6493 /* Sections */,
+				DB94221423103CD7007CA8F9 /* Views */,
 				DB9F8F23230D7FBF00E724B6 /* ViewControllers */,
 				DB9F8F2A230D803600E724B6 /* Main.storyboard */,
 				DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */,
@@ -211,6 +351,60 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		DB94221423103CD7007CA8F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB03D6FC2311C23C00BC6493 /* Protocols */,
+				DB03D71D23128B2700BC6493 /* CompanyInfoTitleView */,
+				DB94221F23113B30007CA8F9 /* CompanyCell */,
+				DB03D6FF2312854D00BC6493 /* HorizontalThemeCell */,
+				DB03D7002312855C00BC6493 /* InterviewCell */,
+				DB03D7012312856900BC6493 /* JobPostingCell */,
+				DB03D7022312857300BC6493 /* ReviewCell */,
+				DB03D7032312858700BC6493 /* SalaryCell */,
+				DB03D6F82311915900BC6493 /* SectionItemReactor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB94221F23113B30007CA8F9 /* CompanyCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB94221923103D95007CA8F9 /* CompanyCell.swift */,
+				DB94221A23103D95007CA8F9 /* CompanyCell.xib */,
+			);
+			path = CompanyCell;
+			sourceTree = "<group>";
+		};
+		DB94222023117118007CA8F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB942221231172AE007CA8F9 /* DisposableExtension.swift */,
+				DB94222823117A2F007CA8F9 /* IntExtension.swift */,
+				DB94222A23117AF9007CA8F9 /* StringAttributeExtension.swift */,
+				DB03D7222312AC5D00BC6493 /* UIColorExtension.swift */,
+				DB03D72E2312F09800BC6493 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DB942223231172ED007CA8F9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB942224231172FE007CA8F9 /* Protocol */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DB942224231172FE007CA8F9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DB94222623117343007CA8F9 /* UseCompositeDisposable.swift */,
+				DB03D6FA2311B53A00BC6493 /* NibLoadableView.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		DB9F8F1B230D794000E724B6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +427,8 @@
 			children = (
 				DB9F8F2B230D803600E724B6 /* MainViewController.swift */,
 				DB9F8F2C230D803600E724B6 /* MainViewReactor.swift */,
+				DB03D7292312EF5100BC6493 /* DetailViewController.swift */,
+				DB03D72A2312EF5100BC6493 /* DetailViewReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -389,9 +585,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB03D7172312864C00BC6493 /* SalaryCell.xib in Resources */,
+				DB94221C23103D95007CA8F9 /* CompanyCell.xib in Resources */,
+				DB03D71C231286E600BC6493 /* ThemeCollectionViewCell.xib in Resources */,
+				DB03D7132312863200BC6493 /* ReviewCell.xib in Resources */,
 				DB927604230D0DAB001FF7FE /* LaunchScreen.storyboard in Resources */,
+				DB03D70F2312861D00BC6493 /* JobPostingCell.xib in Resources */,
+				DB03D707231285EB00BC6493 /* HorizontalThemeCell.xib in Resources */,
+				DB03D72123128B6C00BC6493 /* CompanyInfoTitleView.xib in Resources */,
 				DB927601230D0DAB001FF7FE /* Assets.xcassets in Resources */,
 				DB9F8F2D230D803600E724B6 /* Main.storyboard in Resources */,
+				DB03D70B2312860800BC6493 /* InterviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,24 +724,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9F8F47230D950B00E724B6 /* CellItem.swift in Sources */,
+				DB03D70A2312860800BC6493 /* InterviewCell.swift in Sources */,
+				DB94222723117343007CA8F9 /* UseCompositeDisposable.swift in Sources */,
 				DB9F8F49230ED49700E724B6 /* Deadline.swift in Sources */,
 				DB9F8F2F230D803600E724B6 /* MainViewReactor.swift in Sources */,
+				DB03D706231285EB00BC6493 /* HorizontalThemeCell.swift in Sources */,
+				DB94222923117A2F007CA8F9 /* IntExtension.swift in Sources */,
 				DB9F8F3D230D947A00E724B6 /* HorizontalTheme.swift in Sources */,
 				DB9F8F38230D941A00E724B6 /* CellType.swift in Sources */,
 				DB9F8F45230D94E600E724B6 /* Salary.swift in Sources */,
+				DB03D6F72311815900BC6493 /* MainViewSection.swift in Sources */,
 				DB9F8F3F230D949100E724B6 /* Interview.swift in Sources */,
+				DB03D72F2312F09800BC6493 /* UIViewControllerExtension.swift in Sources */,
 				DB9F8F32230D88B700E724B6 /* Jobplanet.swift in Sources */,
+				DB94221B23103D95007CA8F9 /* CompanyCell.swift in Sources */,
+				DB03D6FB2311B53B00BC6493 /* NibLoadableView.swift in Sources */,
+				DB03D7162312864C00BC6493 /* SalaryCell.swift in Sources */,
+				DB03D71B231286E600BC6493 /* ThemeCollectionViewCell.swift in Sources */,
 				DB9F8F43230D94CF00E724B6 /* Review.swift in Sources */,
+				DB03D72D2312EF5100BC6493 /* DetailViewReactor.swift in Sources */,
 				DB9F8F1F230D7A5200E724B6 /* Networking.swift in Sources */,
+				DB03D6F92311915900BC6493 /* SectionItemReactor.swift in Sources */,
+				DB94222B23117AF9007CA8F9 /* StringAttributeExtension.swift in Sources */,
 				DB0F83CB230E7C7E00032394 /* Theme.swift in Sources */,
+				DB03D7232312AC5D00BC6493 /* UIColorExtension.swift in Sources */,
 				DB927629230D2FA0001FF7FE /* Logger.swift in Sources */,
 				DB9F8F1D230D797700E724B6 /* JobplanetAPI.swift in Sources */,
 				DB9F8F2E230D803600E724B6 /* MainViewController.swift in Sources */,
 				DB9F8F3B230D944600E724B6 /* Company.swift in Sources */,
 				DB9F8F41230D94A700E724B6 /* JobPosting.swift in Sources */,
+				DB03D72C2312EF5100BC6493 /* DetailViewController.swift in Sources */,
 				DB9F8F35230D93DF00E724B6 /* CellTypeModel.swift in Sources */,
+				DB03D7252312B85500BC6493 /* HasShowMoreButton.swift in Sources */,
+				DB942222231172AE007CA8F9 /* DisposableExtension.swift in Sources */,
+				DB03D71F23128B5C00BC6493 /* CompanyInfoTitleView.swift in Sources */,
 				DB9F8F22230D7ED200E724B6 /* NetworkService.swift in Sources */,
+				DB03D7122312863200BC6493 /* ReviewCell.swift in Sources */,
 				DB9275FA230D0DA9001FF7FE /* AppDelegate.swift in Sources */,
+				DB03D70E2312861D00BC6493 /* JobPostingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

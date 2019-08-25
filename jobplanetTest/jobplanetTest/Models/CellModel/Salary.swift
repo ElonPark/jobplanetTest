@@ -9,6 +9,7 @@
 import ObjectMapper
 
 struct Salary: ImmutableMappable, CellTypeModel, Equatable {
+    
     let cellType: CellType
     let ranking: String
     let companyID: Int
