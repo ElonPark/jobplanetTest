@@ -16,13 +16,16 @@ final class DetailViewController: UIViewController, StoryboardView {
     
     var disposeBag: DisposeBag = DisposeBag()
     
+    deinit {
+        Log.verbose(type(of: self))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
 
     func bind(reactor: DetailViewReactor) {
-        Log.debug()
         reactor.state.map { (item: $0.sectionItem, themeIndex: $0.themeIndex) }
             .observeOn(MainScheduler.instance)
             .bind { [weak self] section in

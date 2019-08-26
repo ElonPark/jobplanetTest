@@ -189,7 +189,6 @@ final class MainViewController: UIViewController, StoryboardView {
     private func setBindCellDidSeletecdTheme(_ cell: UITableViewCell, with indexPath: IndexPath) {
         guard let horizontalCell = cell as? HorizontalThemeCell else { return }
         horizontalCell.selectedTheme
-            .debug()
             .bind { [weak self] themeIndex in
                 guard let index = themeIndex.value else { return }
                 self?.themeSelected.accept((indexPath, index))
