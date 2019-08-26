@@ -24,7 +24,12 @@ final class DetailViewController: UIViewController, StoryboardView {
         super.viewDidLoad()
         textView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.setContentOffset(CGPoint(x: -20, y: -20), animated: true)
+    }
+    
     func bind(reactor: DetailViewReactor) {
         reactor.state.map { (item: $0.sectionItem, themeIndex: $0.themeIndex) }
             .observeOn(MainScheduler.instance)
