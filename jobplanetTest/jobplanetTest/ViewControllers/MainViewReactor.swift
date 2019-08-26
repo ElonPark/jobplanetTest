@@ -15,18 +15,21 @@ class MainViewReactor: Reactor {
     enum Action {
         case loadData
         case itemSelected(IndexPath)
+        case themeSelected((item: IndexPath, theme: IndexPath))
     }
     
     enum Mutation {
         case setLoading(Bool)
         case setJobplanet([MainViewSectionItem])
         case setSelectedItem(Int)
+        case setSelectedTheme(IndexPath)
     }
     
     struct State {
         var isLoading: Bool = false
         var sections = [MainViewSection]()
         var selectedItem: MainViewSectionItem? = nil
+        var selectedTheme: (item: MainViewSectionItem?, themeIndex: IndexPath)? = nil
     }
     
     let networkService: NetworkService
@@ -53,6 +56,10 @@ class MainViewReactor: Reactor {
         case .itemSelected(let indexPath):
             Log.debug(indexPath.row)
             return .just(.setSelectedItem(indexPath.row))
+            
+        case .themeSelected(let indexPaths):
+            let indexPath = IndexPath(item: indexPaths.theme.item, section: indexPaths.item.row)
+            return .just(.setSelectedTheme(indexPath))
         }
     }
     
@@ -62,16 +69,25 @@ class MainViewReactor: Reactor {
         switch mutation {
         case .setLoading(let isLoading):
             newState.selectedItem = nil
+            newState.selectedTheme = nil
             newState.isLoading = isLoading
             return newState
             
         case .setJobplanet(let sectionItems):
             newState.selectedItem = nil
+            newState.selectedTheme = nil
             newState.sections = [.jobplanet(sectionItems)]
             return newState
             
         case .setSelectedItem(let row):
+            newState.selectedTheme = nil
             newState.selectedItem = newState.sections.first?.items[row]
+            return newState
+            
+        case .setSelectedTheme(let indexPath):
+            newState.selectedItem = nil
+            let section = newState.sections.first?.items[indexPath.section]
+            newState.selectedTheme = (section, indexPath)
             return newState
         }
     }

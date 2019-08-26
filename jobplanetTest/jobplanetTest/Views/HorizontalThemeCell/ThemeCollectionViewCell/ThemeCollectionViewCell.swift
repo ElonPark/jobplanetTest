@@ -19,6 +19,10 @@ class ThemeCollectionViewCell: UICollectionViewCell, NibLoadableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        initUI()
+    }
+    
+    private func initUI() {
         coverImageView.image = nil
         titleLabel.text = ""
     }
@@ -29,6 +33,14 @@ class ThemeCollectionViewCell: UICollectionViewCell, NibLoadableView {
         imageBackgroundView.backgroundColor = UIColor(hex: theme.color)
         
         guard let url = URL(string: theme.coverImage) else { return }
-        coverImageView.kf.setImage(with: url)
+        coverImageView.kf.setImage(with: url) { [weak self] result in
+            switch result {
+            case .success(_):
+                break
+            case .failure(let error):
+                Log.error(error.localizedDescription)
+                self?.coverImageView.image = nil
+            }
+        }
     }
 }

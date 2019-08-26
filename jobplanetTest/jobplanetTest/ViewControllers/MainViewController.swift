@@ -40,6 +40,7 @@ final class MainViewController: UIViewController, StoryboardView {
     private var storedOffsets = [Int : CGFloat]()
     
     private var itemSelected = PublishRelay<IndexPath>()
+    private var themeSelected = PublishRelay<(IndexPath, IndexPath)>()
     
     typealias MainDataSource = RxTableViewSectionedReloadDataSource<MainViewSection>
     
@@ -99,6 +100,11 @@ final class MainViewController: UIViewController, StoryboardView {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        themeSelected
+            .map(Reactor.Action.themeSelected)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         // Output
         
         reactor.state.map { $0.isLoading }
@@ -123,6 +129,19 @@ final class MainViewController: UIViewController, StoryboardView {
                 self?.navigationController?.pushViewController(detailVC, animated: true)
             }
             .disposed(by: self.disposeBag)
+        
+        reactor.state.map { $0.selectedTheme }
+            .filterNil()
+            .filter { $0.item != nil }
+            .map { (item: $0.item!, index: $0.themeIndex) }
+            .observeOn(MainScheduler.instance)
+            .bind { [weak self] section in
+                guard let detailVC: DetailViewController = UIViewController.instantiate(by: .main) else { return }
+                let reactor = DetailViewReactor(item: section.item, themeIndex: section.index.item)
+                detailVC.reactor = reactor
+                self?.navigationController?.pushViewController(detailVC, animated: true)
+            }
+            .disposed(by: self.disposeBag)
     }
     
     
@@ -142,6 +161,7 @@ final class MainViewController: UIViewController, StoryboardView {
             .asDriver()
             .drive(onNext: { [weak self] cell, indexPath in
                 self?.setHorizontalCellScrollOffset(cell, with: indexPath)
+                self?.setBindCellDidSeletecdTheme(cell, with: indexPath)
                 self?.bindTableViewCellShowMoreButtonDidTap(cell, with: indexPath)
             })
             .disposed(by: disposeBag)
@@ -164,6 +184,17 @@ final class MainViewController: UIViewController, StoryboardView {
     private func setStoredOffsets(_ cell: UITableViewCell, with indexPath: IndexPath) {
         guard let horizontalCell = cell as? HorizontalThemeCell else { return }
         storedOffsets[indexPath.row] = horizontalCell.collectionViewOffset
+    }
+    
+    private func setBindCellDidSeletecdTheme(_ cell: UITableViewCell, with indexPath: IndexPath) {
+        guard let horizontalCell = cell as? HorizontalThemeCell else { return }
+        horizontalCell.selectedTheme
+            .debug()
+            .bind { [weak self] themeIndex in
+                guard let index = themeIndex.value else { return }
+                self?.themeSelected.accept((indexPath, index))
+            }
+            .disposed(by: horizontalCell.disposables)
     }
     
     private func bindTableViewCellShowMoreButtonDidTap(_ cell: UITableViewCell, with indexPath: IndexPath) {

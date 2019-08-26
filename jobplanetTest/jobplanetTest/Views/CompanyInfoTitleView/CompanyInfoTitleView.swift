@@ -61,6 +61,14 @@ class CompanyInfoTitleView: UIView {
     
     func setLogoImage(by urlString: String) {
         guard let url = URL(string: urlString) else { return }
-        logoImageView.kf.setImage(with: url)
+        logoImageView.kf.setImage(with: url) { [weak self] result in
+            switch result {
+            case .success(_):
+                break
+            case .failure(let error):
+                Log.error(error.localizedDescription)
+                self?.logoImageView.image = nil
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import ReusableKit
 
-class HorizontalThemeCell: UITableViewCell, NibLoadableView, ReactorKit.View  {
+class HorizontalThemeCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompositeDisposable  {
 
     // MARK: UI
     
@@ -27,7 +27,10 @@ class HorizontalThemeCell: UITableViewCell, NibLoadableView, ReactorKit.View  {
     // MARK: Properties
     
     var disposeBag: DisposeBag = DisposeBag()
+    var disposables: CompositeDisposable = CompositeDisposable()
+    
     var themes = BehaviorRelay(value: [Theme]())
+    var selectedTheme = BehaviorRelay<IndexPath?>(value: nil)
     
     var collectionViewOffset: CGFloat {
         set {
@@ -43,6 +46,14 @@ class HorizontalThemeCell: UITableViewCell, NibLoadableView, ReactorKit.View  {
         super.awakeFromNib()
         // Initialization code
         collectionView.register(Reusable.themeCell)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dispose()
+        themes.accept([])
+        selectedTheme.accept(nil)
+        collectionView.reloadData()
     }
     
     // MARK: Binding
@@ -71,8 +82,6 @@ extension HorizontalThemeCell: UICollectionViewDataSource {
 extension HorizontalThemeCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.row < themes.value.count else { return }
-        let theme = themes.value[indexPath.item]
-        Log.debug(theme.title)
+        selectedTheme.accept(indexPath)
     }
 }

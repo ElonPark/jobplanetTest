@@ -23,16 +23,16 @@ final class DetailViewController: UIViewController, StoryboardView {
 
     func bind(reactor: DetailViewReactor) {
         Log.debug()
-        reactor.state.map { $0.sectionItem }
+        reactor.state.map { (item: $0.sectionItem, themeIndex: $0.themeIndex) }
             .observeOn(MainScheduler.instance)
-            .bind { [weak self] item in
+            .bind { [weak self] section in
                 guard let `self` = self else { return }
-                self.setUI(with: item)
+                self.setUI(with: section.item, index: section.themeIndex)
             }
             .disposed(by: self.disposeBag)
     }
     
-    private func setUI(with item: MainViewSectionItem) {
+    private func setUI(with item: MainViewSectionItem, index: Int?) {
         switch item {
         case .company(let company):
             let model = company.initialState.model
@@ -40,7 +40,7 @@ final class DetailViewController: UIViewController, StoryboardView {
             
         case .horizontalTheme(let horizontalTheme):
             let model = horizontalTheme.initialState.model
-            setHorizontalThemeModelText(by: model)
+            setHorizontalThemeModelText(by: model, index: index)
             
         case .interview(let interview):
             let model = interview.initialState.model
@@ -81,23 +81,23 @@ final class DetailViewController: UIViewController, StoryboardView {
         """.attribute(size: 17, weight: .semibold, lineSpacing: 8)
     }
     
-    private func setHorizontalThemeModelText(by model: HorizontalTheme) {
+    private func setHorizontalThemeModelText(by model: HorizontalTheme, index: Int?) {
         textView.text = """
         cellType: \(model.cellType)
         count: \(model.count)
         themes:
-        [\n
+        
         """
         
-        model.themes.forEach {
-            textView.text.append("  {\n")
-            textView.text.append("    id: \($0)\n")
-            textView.text.append("    title: \($0)\n")
-            textView.text.append("    color: \($0)\n")
-            textView.text.append("    coverImage: \($0)\n")
-            textView.text.append("  },\n")
+        if let thmemIndex = index, thmemIndex < model.themes.count {
+             let theme = model.themes[thmemIndex]
+            textView.text.append("{\n")
+            textView.text.append("  id: \(theme.id)\n")
+            textView.text.append("  title: \(theme.title)\n")
+            textView.text.append("  color: \(theme.color)\n")
+            textView.text.append("  coverImage: \(theme.coverImage)\n")
+            textView.text.append("}\n")
         }
-        textView.text.append("]")
     }
     
     private func setInterviewModelText(by model: Interview) {

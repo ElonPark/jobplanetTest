@@ -16,11 +16,12 @@ class DetailViewReactor: Reactor {
     
     struct State {
         var sectionItem: MainViewSectionItem
+        var themeIndex: Int?
     }
     
     let initialState: State
     
-    init(item: MainViewSectionItem) {
-        initialState = State(sectionItem: item)
+    init(item: MainViewSectionItem, themeIndex: Int? = nil) {
+        initialState = State(sectionItem: item, themeIndex: themeIndex)
     }
 }
