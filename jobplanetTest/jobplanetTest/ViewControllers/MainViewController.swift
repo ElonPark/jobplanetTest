@@ -123,10 +123,8 @@ final class MainViewController: UIViewController, StoryboardView {
             .filterNil()
             .observeOn(MainScheduler.instance)
             .bind { [weak self] item in
-                guard let detailVC: DetailViewController = UIViewController.instantiate(by: .main) else { return }
-                 let reactor = DetailViewReactor(item: item)
-                detailVC.reactor = reactor
-                self?.navigationController?.pushViewController(detailVC, animated: true)
+                let reactor = DetailViewReactor(item: item)
+                self?.moveToDetailVC(with: reactor)
             }
             .disposed(by: self.disposeBag)
         
@@ -136,14 +134,17 @@ final class MainViewController: UIViewController, StoryboardView {
             .map { (item: $0.item!, index: $0.themeIndex) }
             .observeOn(MainScheduler.instance)
             .bind { [weak self] section in
-                guard let detailVC: DetailViewController = UIViewController.instantiate(by: .main) else { return }
                 let reactor = DetailViewReactor(item: section.item, themeIndex: section.index.item)
-                detailVC.reactor = reactor
-                self?.navigationController?.pushViewController(detailVC, animated: true)
+                self?.moveToDetailVC(with: reactor)
             }
             .disposed(by: self.disposeBag)
     }
     
+    private func moveToDetailVC(with reactor: DetailViewReactor) {
+        guard let detailVC: DetailViewController = UIViewController.instantiate(by: .main) else { return }
+        detailVC.reactor = reactor
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
     
     // MARK: internal
     
