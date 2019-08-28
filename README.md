@@ -12,3 +12,18 @@ API URL : `https://api-test-198703.appspot.com/`
 2. 그 외 xib는 별점과 progressbar를 제외한 이미지(로고)와 텍스트만 구현 (데이터만 알맞게 보여주면 됨)  
 3. 상세화면은 아이템의 컨텐츠를 UILabel에 단순표시 (디자인 필요 없고 내용만 보이면 됩니다.)  
 
+---  
+> **개발환경**  
+> `macOS 10.14.6`  
+> `Xcode 10.3`  
+> `Swift 5.0`
+
+
+
+- 실행 시 주의 사항
+
+```shell
+$ cd /jobplanetTest/jobplanetTest
+$ pod install --repo-update
+
+```
