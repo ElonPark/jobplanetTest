@@ -33,6 +33,7 @@ target 'jobplanetTest' do
   pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/814349837/Moya-ObjectMapper', :commit => '6347b7bde5'
   
   # ETC
+  pod 'EPLogger'
   pod 'Then'
   pod 'ObjectMapper', '~> 3.4'
   pod 'Kingfisher', '~> 5.0'
