@@ -33,6 +33,7 @@
 		DB03D72D2312EF5100BC6493 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D72A2312EF5100BC6493 /* DetailViewReactor.swift */; };
 		DB03D72F2312F09800BC6493 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03D72E2312F09800BC6493 /* UIViewControllerExtension.swift */; };
 		DB0F83CB230E7C7E00032394 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0F83CA230E7C7E00032394 /* Theme.swift */; };
+		DB1CF0F02320D353005BEB0E /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CF0EF2320D353005BEB0E /* Stub.swift */; };
 		DB9275FA230D0DA9001FF7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */; };
 		DB927601230D0DAB001FF7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB927600230D0DAB001FF7FE /* Assets.xcassets */; };
 		DB927604230D0DAB001FF7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB927602230D0DAB001FF7FE /* LaunchScreen.storyboard */; };
@@ -112,6 +113,7 @@
 		DB03D72A2312EF5100BC6493 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
 		DB03D72E2312F09800BC6493 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DB0F83CA230E7C7E00032394 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DB1CF0EF2320D353005BEB0E /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		DB9275F6230D0DA9001FF7FE /* jobplanetTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jobplanetTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9275F9230D0DA9001FF7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB927600230D0DAB001FF7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				DB9F8F33230D93C800E724B6 /* Protocols */,
 				DB9F8F39230D942D00E724B6 /* CellModel */,
 				DB9F8F31230D88B700E724B6 /* Jobplanet.swift */,
+				DB1CF0EF2320D353005BEB0E /* Stub.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				DB9F8F3D230D947A00E724B6 /* HorizontalTheme.swift in Sources */,
 				DB9F8F38230D941A00E724B6 /* CellType.swift in Sources */,
 				DB9F8F45230D94E600E724B6 /* Salary.swift in Sources */,
+				DB1CF0F02320D353005BEB0E /* Stub.swift in Sources */,
 				DB03D6F72311815900BC6493 /* MainViewSection.swift in Sources */,
 				DB9F8F3F230D949100E724B6 /* Interview.swift in Sources */,
 				DB03D72F2312F09800BC6493 /* UIViewControllerExtension.swift in Sources */,

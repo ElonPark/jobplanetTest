@@ -93,17 +93,17 @@ final class MainViewController: UIViewController, StoryboardView {
        
         Observable.just(Reactor.Action.loadData)
             .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .disposed(by: self.disposeBag)
         
         itemSelected
             .map(Reactor.Action.itemSelected)
             .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .disposed(by: self.disposeBag)
         
         themeSelected
             .map(Reactor.Action.themeSelected)
             .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .disposed(by: self.disposeBag)
         
         // Output
         
@@ -112,7 +112,7 @@ final class MainViewController: UIViewController, StoryboardView {
             .bind { [weak self] isLoading in
                 self?.setLoadingIndicator(isLoading)
             }
-            .disposed(by: disposeBag)
+            .disposed(by: self.disposeBag)
         
         reactor.state.map { $0.sections }
             .distinctUntilChanged()

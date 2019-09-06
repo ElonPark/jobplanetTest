@@ -94,36 +94,27 @@ class MainViewReactor: Reactor {
     
     private func mainViewSectionItems(with jobplanet: Jobplanet) -> [MainViewSectionItem] {
         return jobplanet.items.compactMap { item -> MainViewSectionItem? in
-            switch item.cellType {
-            case .company:
-                guard let company = item.data as? Company else { return nil }
-                let reactor = SectionItemReactor(model: company)
-                return .company(reactor)
+            switch item.data {
+            case let company as Company:
+                return .company(SectionItemReactor(model: company))
                 
-            case .horizontalTheme:
-                guard let horizontalTheme = item.data as? HorizontalTheme else { return nil }
-                let reactor = SectionItemReactor(model: horizontalTheme)
-                return .horizontalTheme(reactor)
+            case let horizontalTheme as HorizontalTheme:
+                return .horizontalTheme(SectionItemReactor(model: horizontalTheme))
                 
-            case .interview:
-                guard let interview = item.data as? Interview else { return nil }
-                let reactor = SectionItemReactor(model: interview)
-                return .interview(reactor)
+            case let interview as Interview:
+                return .interview(SectionItemReactor(model: interview))
                 
-            case .jobPosting:
-                guard let jobPosting = item.data as? JobPosting else { return nil }
-                let reactor = SectionItemReactor(model: jobPosting)
-                return .jobPosting(reactor)
+            case let jobPosting as JobPosting:
+                return .jobPosting(SectionItemReactor(model: jobPosting))
                 
-            case .review:
-                guard let review = item.data as? Review else { return nil }
-                let reactor = SectionItemReactor(model: review)
-                return .review(reactor)
+            case let review as Review:
+                return .review(SectionItemReactor(model: review))
                 
-            case .salary:
-                guard let salary = item.data as? Salary else { return nil }
-                let reactor = SectionItemReactor(model: salary)
-                return .salary(reactor)
+            case let salary as Salary:
+                return .salary(SectionItemReactor(model: salary))
+                
+            default:
+                return nil
             }
         }
     }

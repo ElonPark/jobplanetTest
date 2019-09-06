@@ -45,7 +45,7 @@ extension JobplanetAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .sample:
-            return "{}".data(using: String.Encoding.utf8)!
+            return Stub().jobplanet.data(using: String.Encoding.utf8)!
         }
     }
 }
