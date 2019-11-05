@@ -25,9 +25,12 @@ final class DetailViewController: UIViewController, StoryboardView {
         textView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        textView.setContentOffset(CGPoint(x: -20, y: -20), animated: true)
     }
     
     func bind(reactor: DetailViewReactor) {

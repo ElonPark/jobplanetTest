@@ -9,6 +9,6 @@
 import UIKit
 import RxSwift
 
-protocol HasShowMoreButton: UseCompositeDisposable {
+protocol HasShowMoreButton: HasDisposeBag {
     var showMoreButton: UIButton! { get set }
 }

@@ -26,8 +26,8 @@ final class MainViewController: UIViewController, StoryboardView {
     
     struct Reusable {
         static let companyCell = ReusableCell<CompanyCell>(nibName: CompanyCell.nibName)
-         static let horizontalThemeCell = ReusableCell<HorizontalThemeCell>(nibName: HorizontalThemeCell.nibName)
-          static let interviewCell = ReusableCell<InterviewCell>(nibName: InterviewCell.nibName)
+        static let horizontalThemeCell = ReusableCell<HorizontalThemeCell>(nibName: HorizontalThemeCell.nibName)
+        static let interviewCell = ReusableCell<InterviewCell>(nibName: InterviewCell.nibName)
         static let jobPostingCell = ReusableCell<JobPostingCell>(nibName: JobPostingCell.nibName)
         static let reviewCell = ReusableCell<ReviewCell>(nibName: ReviewCell.nibName)
         static let salaryCell = ReusableCell<SalaryCell>(nibName: SalaryCell.nibName)
@@ -194,15 +194,15 @@ final class MainViewController: UIViewController, StoryboardView {
                 guard let index = themeIndex.value else { return }
                 self?.themeSelected.accept((indexPath, index))
             }
-            .disposed(by: horizontalCell.disposables)
+            .disposed(by: horizontalCell.disposeBag)
     }
     
     private func bindTableViewCellShowMoreButtonDidTap(_ cell: UITableViewCell, with indexPath: IndexPath) {
         guard let cell = cell as? HasShowMoreButton else { return }
         cell.showMoreButton.rx.tap
-            .map { _ in indexPath }
+            .map { indexPath }
             .bind(to: itemSelected)
-            .disposed(by: cell.disposables)
+            .disposed(by: cell.disposeBag)
     }
     
     private func bindTableViewItemSelected() {

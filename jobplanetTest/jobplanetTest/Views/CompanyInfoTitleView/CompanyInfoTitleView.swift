@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class CompanyInfoTitleView: UIView {
+final class CompanyInfoTitleView: UIView {
 
     let nibName = "CompanyInfoTitleView"
     var contentView: UIView?

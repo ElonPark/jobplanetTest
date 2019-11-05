@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-final class CompanyCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompositeDisposable, HasShowMoreButton {
+final class CompanyCell: UITableViewCell, NibLoadableView, ReactorKit.View, HasShowMoreButton {
     
     // MARK: UI
     
@@ -37,19 +37,16 @@ final class CompanyCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseC
     // MARK: Properties
     
     var disposeBag: DisposeBag = DisposeBag()
-    var disposables: CompositeDisposable = CompositeDisposable()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         initUI()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dispose()
+        disposeBag = DisposeBag()
     }
     
     // MARK: Binding
@@ -59,13 +56,14 @@ final class CompanyCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseC
             .distinctUntilChanged()
             .observeOn(MainScheduler.instance)
             .bind { [weak self] company in
-                self?.titleView.setLogoImage(by: company.logoPath)
-                self?.titleView.titleLabel.text = company.name
-                self?.titleView.rateLabel.text = String(company.rateTotalAvg)
-                self?.titleView.industryNameLabel.text = company.industryName
-                self?.salaryAvgLabel.text = company.salaryAvg.withComma()
-                self?.setReviewSummaryLabel(by: company.reviewSummary)
-                self?.setInterviewQuestionLabel(by: company.interviewQuestion)
+                guard let self = self else { return }
+                self.titleView.setLogoImage(by: company.logoPath)
+                self.titleView.titleLabel.text = company.name
+                self.titleView.rateLabel.text = String(company.rateTotalAvg)
+                self.titleView.industryNameLabel.text = company.industryName
+                self.salaryAvgLabel.text = company.salaryAvg.withComma()
+                self.setReviewSummaryLabel(by: company.reviewSummary)
+                self.setInterviewQuestionLabel(by: company.interviewQuestion)
             }
             .disposed(by: self.disposeBag)
     }

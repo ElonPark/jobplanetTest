@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-class SalaryCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompositeDisposable, HasShowMoreButton {
+final class SalaryCell: UITableViewCell, NibLoadableView, ReactorKit.View, HasShowMoreButton {
 
     // MARK: UI
     
@@ -26,8 +26,6 @@ class SalaryCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComposit
     // MARK: Properties
     
     var disposeBag: DisposeBag = DisposeBag()
-    var disposables: CompositeDisposable = CompositeDisposable()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +40,7 @@ class SalaryCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComposit
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dispose()
+        disposeBag = DisposeBag()
     }
     
     
@@ -53,14 +51,15 @@ class SalaryCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComposit
             .distinctUntilChanged()
             .observeOn(MainScheduler.instance)
             .bind { [weak self] salary in
-                self?.titleView.setLogoImage(by: salary.logoPath)
-                self?.titleView.titleLabel.text = salary.name
-                self?.titleView.rateLabel.text = String(salary.rateTotalAvg)
-                self?.titleView.industryNameLabel.text = salary.industryName
-                self?.salaryAvgLabel.text = salary.salaryAvg.withComma()
-               self?.salaryMinLabel.text = salary.salaryLowest.withComma()
-                self?.salaryMaxLabel.text = salary.salaryHighest.withComma()
-            }
-            .disposed(by: self.disposeBag)
+                guard let self = self else { return }
+                self.titleView.setLogoImage(by: salary.logoPath)
+                self.titleView.titleLabel.text = salary.name
+                self.titleView.rateLabel.text = String(salary.rateTotalAvg)
+                self.titleView.industryNameLabel.text = salary.industryName
+                self.salaryAvgLabel.text = salary.salaryAvg.withComma()
+                self.salaryMinLabel.text = salary.salaryLowest.withComma()
+                self.salaryMaxLabel.text = salary.salaryHighest.withComma()
+        }
+        .disposed(by: self.disposeBag)
     }
 }

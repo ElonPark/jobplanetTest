@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-class InterviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompositeDisposable, HasShowMoreButton {
+final class InterviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, HasShowMoreButton {
 
     // MARK: UI
     
@@ -28,7 +28,6 @@ class InterviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompo
     // MARK: Properties
     
     var disposeBag: DisposeBag = DisposeBag()
-    var disposables: CompositeDisposable = CompositeDisposable()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +37,7 @@ class InterviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompo
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        dispose()
+        disposeBag = DisposeBag()
     }
     
     // MARK: Binding
@@ -48,12 +47,13 @@ class InterviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompo
             .distinctUntilChanged()
             .observeOn(MainScheduler.instance)
             .bind { [weak self] interview in
-                self?.titleView.setLogoImage(by: interview.logoPath)
-                self?.titleView.titleLabel.text = interview.name
-                self?.titleView.rateLabel.text = String(interview.rateTotalAvg)
-                self?.titleView.industryNameLabel.text = interview.industryName
-                self?.setInterviewQuestionLabel(by: interview.interviewQuestion)
-                self?.interviewDifficultyLabel.text = String(interview.interviewDifficulty)
+                guard let self = self else { return }
+                self.titleView.setLogoImage(by: interview.logoPath)
+                self.titleView.titleLabel.text = interview.name
+                self.titleView.rateLabel.text = String(interview.rateTotalAvg)
+                self.titleView.industryNameLabel.text = interview.industryName
+                self.setInterviewQuestionLabel(by: interview.interviewQuestion)
+                self.interviewDifficultyLabel.text = String(interview.interviewDifficulty)
             }
             .disposed(by: self.disposeBag)
     }

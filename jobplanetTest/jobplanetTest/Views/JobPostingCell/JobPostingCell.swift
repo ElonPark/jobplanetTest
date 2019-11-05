@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import Kingfisher
 
-class JobPostingCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompositeDisposable {
+final class JobPostingCell: UITableViewCell, NibLoadableView, ReactorKit.View {
 
     // MARK: UI
     
@@ -29,8 +29,6 @@ class JobPostingCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComp
     // MARK: Properties
     
     var disposeBag: DisposeBag = DisposeBag()
-    var disposables: CompositeDisposable = CompositeDisposable()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,7 +51,8 @@ class JobPostingCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComp
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dispose()
+        disposeBag = DisposeBag()
+        logoImageView.kf.cancelDownloadTask()
     }
     
     
@@ -64,14 +63,15 @@ class JobPostingCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComp
             .distinctUntilChanged()
             .observeOn(MainScheduler.instance)
             .bind { [weak self] jobPosting in
-                self?.setLogoImage(by: jobPosting.logo)
-                self?.nameLabel.text = jobPosting.companyName
-                self?.titleLabel.text = jobPosting.title
-                self?.rateLabel.text = String(jobPosting.reviewAvgCache)
-                self?.messageLabel.text = jobPosting.deadline.message
-                self?.messageLabel.textColor = UIColor(hex: jobPosting.deadline.hexColor)
+                guard let self = self else { return }
+                self.setLogoImage(by: jobPosting.logo)
+                self.nameLabel.text = jobPosting.companyName
+                self.titleLabel.text = jobPosting.title
+                self.rateLabel.text = String(jobPosting.reviewAvgCache)
+                self.messageLabel.text = jobPosting.deadline.message
+                self.messageLabel.textColor = UIColor(hex: jobPosting.deadline.hexColor)
                 let isSaved = Bool(jobPosting.isSaved) ?? false
-                self?.saveButton.isEnabled = isSaved
+                self.saveButton.isEnabled = isSaved
             }
             .disposed(by: self.disposeBag)
     }
@@ -80,5 +80,4 @@ class JobPostingCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComp
         guard let url = URL(string: urlString) else { return }
         logoImageView.kf.setImage(with: url)
     }
-    
 }

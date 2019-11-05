@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class ThemeCollectionViewCell: UICollectionViewCell, NibLoadableView {
+final class ThemeCollectionViewCell: UICollectionViewCell, NibLoadableView {
 
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var imageBackgroundView: UIView!
@@ -27,6 +27,12 @@ class ThemeCollectionViewCell: UICollectionViewCell, NibLoadableView {
         titleLabel.text = ""
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        initUI()
+        coverImageView.kf.cancelDownloadTask()
+    }
+    
     func setUI(with theme: Theme) {
         titleLabel.text = theme.title
         
@@ -37,6 +43,7 @@ class ThemeCollectionViewCell: UICollectionViewCell, NibLoadableView {
             switch result {
             case .success(_):
                 break
+                
             case .failure(let error):
                 Log.error(error.localizedDescription)
                 self?.coverImageView.image = nil

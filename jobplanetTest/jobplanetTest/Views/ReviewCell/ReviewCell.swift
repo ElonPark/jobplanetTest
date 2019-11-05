@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxSwift
 
-class ReviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseCompositeDisposable, HasShowMoreButton {
+final class ReviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, HasShowMoreButton {
 
     @IBOutlet weak var titleView: CompanyInfoTitleView!
     
@@ -26,8 +26,6 @@ class ReviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComposit
     // MARK: Properties
     
     var disposeBag: DisposeBag = DisposeBag()
-    var disposables: CompositeDisposable = CompositeDisposable()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +38,7 @@ class ReviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComposit
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dispose()
+        disposeBag = DisposeBag()
     }
     
     // MARK: Binding
@@ -50,13 +48,14 @@ class ReviewCell: UITableViewCell, NibLoadableView, ReactorKit.View, UseComposit
             .distinctUntilChanged()
             .observeOn(MainScheduler.instance)
             .bind { [weak self] reivew in
-                self?.titleView.setLogoImage(by: reivew.logoPath)
-                self?.titleView.titleLabel.text = reivew.name
-                self?.titleView.rateLabel.text = String(reivew.rateTotalAvg)
-                self?.titleView.industryNameLabel.text = reivew.industryName
-                self?.setReviewSummaryLabel(by: reivew.reviewSummary)
-                self?.setProsLabel(by: reivew.pros)
-                self?.setConsLabel(by: reivew.cons)
+                guard let self = self else { return }
+                self.titleView.setLogoImage(by: reivew.logoPath)
+                self.titleView.titleLabel.text = reivew.name
+                self.titleView.rateLabel.text = String(reivew.rateTotalAvg)
+                self.titleView.industryNameLabel.text = reivew.industryName
+                self.setReviewSummaryLabel(by: reivew.reviewSummary)
+                self.setProsLabel(by: reivew.pros)
+                self.setConsLabel(by: reivew.cons)
             }
             .disposed(by: self.disposeBag)
     }
